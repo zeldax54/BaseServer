@@ -7404,3 +7404,15 @@ section.content > .s-DataGrid {
   font-style: italic;
   color: #966;
 }
+.s-Default-TemperatureDataDialog > .size {
+  width: 650px;
+}
+.s-Default-TemperatureDataDialog .caption {
+  width: 150px;
+}
+.s-Data-TemperatureDataDialog > .size {
+  width: 650px;
+}
+.s-Data-TemperatureDataDialog .caption {
+  width: 150px;
+}

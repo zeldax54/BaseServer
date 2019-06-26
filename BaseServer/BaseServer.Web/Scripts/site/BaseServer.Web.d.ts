@@ -318,7 +318,7 @@ declare namespace BaseServer.Administration {
         const isActiveProperty = "IsActive";
         const nameProperty = "Username";
         const localTextPrefix = "Administration.User";
-        const lookupKey = "Administration.User";
+        const lookupKey = "Administration.Users";
         function getLookup(): Q.Lookup<UserRow>;
         const enum Fields {
             UserId = "UserId",
@@ -407,6 +407,90 @@ declare namespace BaseServer.Common {
         PreferenceType?: string;
         Name?: string;
         Value?: string;
+    }
+}
+declare namespace BaseServer.Data {
+    namespace DataDashService {
+        const baseUrl = "Data/DataDash";
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TemperatureDataRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            List = "Data/DataDash/List"
+        }
+    }
+}
+declare namespace BaseServer.Data {
+}
+declare namespace BaseServer.Data {
+    interface TemperatureDataForm {
+        UserId: Serenity.LookupEditor;
+        Datetime: Serenity.DateEditor;
+        Value: Serenity.DecimalEditor;
+    }
+    class TemperatureDataForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace BaseServer.Data {
+    interface TemperatureDataRow {
+        Id?: number;
+        UserId?: number;
+        Datetime?: string;
+        Value?: number;
+        UserUsername?: string;
+        UserDisplayName?: string;
+        UserEmail?: string;
+        UserSource?: string;
+        UserPasswordHash?: string;
+        UserPasswordSalt?: string;
+        UserLastDirectoryUpdate?: string;
+        UserUserImage?: string;
+        UserInsertDate?: string;
+        UserInsertUserId?: number;
+        UserUpdateDate?: string;
+        UserUpdateUserId?: number;
+        UserIsActive?: number;
+    }
+    namespace TemperatureDataRow {
+        const idProperty = "Id";
+        const localTextPrefix = "Data.TemperatureData";
+        const enum Fields {
+            Id = "Id",
+            UserId = "UserId",
+            Datetime = "Datetime",
+            Value = "Value",
+            UserUsername = "UserUsername",
+            UserDisplayName = "UserDisplayName",
+            UserEmail = "UserEmail",
+            UserSource = "UserSource",
+            UserPasswordHash = "UserPasswordHash",
+            UserPasswordSalt = "UserPasswordSalt",
+            UserLastDirectoryUpdate = "UserLastDirectoryUpdate",
+            UserUserImage = "UserUserImage",
+            UserInsertDate = "UserInsertDate",
+            UserInsertUserId = "UserInsertUserId",
+            UserUpdateDate = "UserUpdateDate",
+            UserUpdateUserId = "UserUpdateUserId",
+            UserIsActive = "UserIsActive"
+        }
+    }
+}
+declare namespace BaseServer.Data {
+    namespace TemperatureDataService {
+        const baseUrl = "Data/TemperatureData";
+        function Create(request: Serenity.SaveRequest<TemperatureDataRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<TemperatureDataRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TemperatureDataRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TemperatureDataRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Data/TemperatureData/Create",
+            Update = "Data/TemperatureData/Update",
+            Delete = "Data/TemperatureData/Delete",
+            Retrieve = "Data/TemperatureData/Retrieve",
+            List = "Data/TemperatureData/List"
+        }
     }
 }
 declare namespace BaseServer {
@@ -955,6 +1039,30 @@ declare namespace BaseServer.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace BaseServer.Data {
+    class DataDashScript extends Serenity.TemplatedWidget<any> {
+        constructor(container: JQuery);
+    }
+}
+declare namespace BaseServer.Data {
+    class TemperatureDataDialog extends Serenity.EntityDialog<TemperatureDataRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        protected form: TemperatureDataForm;
+    }
+}
+declare namespace BaseServer.Data {
+    class TemperatureDataGrid extends Serenity.EntityGrid<TemperatureDataRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof TemperatureDataDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace BaseServer.Membership {

@@ -23,10 +23,10 @@
         export const isActiveProperty = 'IsActive';
         export const nameProperty = 'Username';
         export const localTextPrefix = 'Administration.User';
-        export const lookupKey = 'Administration.User';
+        export const lookupKey = 'Administration.Users';
 
         export function getLookup(): Q.Lookup<UserRow> {
-            return Q.getLookup<UserRow>('Administration.User');
+            return Q.getLookup<UserRow>('Administration.Users');
         }
 
         export declare const enum Fields {

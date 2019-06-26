@@ -825,6 +825,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="wkhtmltopdf-license.txt" />
+    <Content Include="Modules\Data\DataDash\DataDashIndex.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1021,9 +1022,16 @@
     <Content Include="tools\Node\less\lib\less\visitor.js" />
     <Content Include="tools\Node\node.exe" />
     <Content Include="tsconfig.json" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Data.DataDashService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Data.TemperatureDataColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Data\DataDash\DataDashScript.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery.blockui\index.d.ts" />
@@ -1572,6 +1580,20 @@
     <TypeScriptCompile Include="Modules\Common\Helpers\BasicProgressDialog.ts" />
     <TypeScriptCompile Include="Modules\Common\Helpers\BulkServiceAction.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
+    <Content Include="Content\site\site.default.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Data.TemperatureDataRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Data.TemperatureDataService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Data\TemperatureData\TemperatureDataIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Data\TemperatureData\TemperatureDataDialog.ts" />
+    <TypeScriptCompile Include="Modules\Data\TemperatureData\TemperatureDataGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Data.TemperatureDataForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Content\site\site.data.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1651,6 +1673,9 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\Data\DataDash\DashboardPage.cs" />
+    <Compile Include="Modules\Data\DataDash\DataDashEndpoint.cs" />
+    <Compile Include="Modules\Data\DataDash\DataDashRepository.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -1705,6 +1730,13 @@
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRow.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionRepository.cs" />
     <Compile Include="Modules\Administration\UserPermission\UserPermissionEndpoint.cs" />
+    <Compile Include="Modules\Data\TemperatureData\TemperatureDataRow.cs" />
+    <Compile Include="Modules\Data\TemperatureData\TemperatureDataRepository.cs" />
+    <Compile Include="Modules\Data\TemperatureData\TemperatureDataEndpoint.cs" />
+    <Compile Include="Modules\Data\TemperatureData\TemperatureDataPage.cs" />
+    <Compile Include="Modules\Data\TemperatureData\TemperatureDataColumns.cs" />
+    <Compile Include="Modules\Data\TemperatureData\TemperatureDataForm.cs" />
+    <Compile Include="Modules\Data\DataNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

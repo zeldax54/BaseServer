@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "℃";
+}
+
+@section Head {
+    <script src="~/Scripts/flot/jquery.flot.min.js"></script>
+    <script src="~/Scripts/flot/jquery.flot.resize.min.js"></script>
+    <script src="~/Scripts/flot/jquery.flot.pie.min.js"></script>
+    <script src="~/Scripts/flot/jquery.flot.categories.min.js"></script>
+    <script src="~/Scripts/adminlte/demo.js"></script>
+}
+
+@section ContentHeader {
+    <h1>@ViewData["Title"]<small></small></h1>
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <!-- interactive chart -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <i class="fa fa-bar-chart-o"></i><br>
+                <h3 style="color:blue" class="box-title">Temperature every 5 seconds, read from a sensor with Arduino and sent to the server via GSM Arduino Shield</h3><br>
+                <h3   style="color:green" class="box-title">Temperatura cada 5 segundos, leida desde un sensor con Arduino y enviada al servidor via GSM</h3>
+                <div class="box-tools pull-right">
+                    Real time
+                    <div class="btn-group" id="realtime" data-toggle="btn-toggle">
+                        <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body">
+                <div id="interactive" style="height: 300px;"></div>
+            </div><!-- /.box-body-->
+        </div><!-- /.box -->
+    </div><!-- /.col -->
+</div><!-- /.row -->
+
+
+<script>
+    $(function () {
+
+              
+        //Inicializando var para la grafica
+        var updateInterval = 5000; //Fetch data ever x milliseconds
+        var realtime = "on"; //If == to on then fetch data every x seconds. else stop fetching
+        let dataIni = [];
+        dataIni.push([1, 3]);
+        dataIni.push([2, 8]);   
+       var interactive_plot = $.plot("#interactive", [dataIni], {
+            grid: {
+                borderColor: "#f3f3f3",
+                borderWidth: 1,
+                tickColor: "#f3f3f3"
+            },
+            series: {
+                shadowSize: 0, // Drawing is faster without shadows
+                color: "#3c8dbc"
+            },
+            lines: {
+                fill: true, //Converts the line chart to area chart
+                color: "#3c8dbc"
+            },
+            yaxis: {
+                min: 0,
+                max: 100,
+                show: true
+            },
+            xaxis: {
+                show: true
+            }
+        });
+
+      
+        function update() {
+
+            var res = [];
+
+            Q.serviceRequest('Data/DataDash/List', {
+                Take: 100,
+                Skip: 0,
+                ColumnSelection: 'List',
+                IncludeColumns: ['Id', 'FormaCobro', 'Coeficiente'],
+
+            }, (response) => {
+                for (var i = 0; i < response.Entities.length; ++i) {
+                    res.push([response.Entities[i].Id, response.Entities[i].Value]);
+                }            
+                interactive_plot.setData([res]);
+                interactive_plot.setupGrid();
+                interactive_plot.draw();
+            });       
+
+           
+
+            // Since the axes don't change, we don't need to call plot.setupGrid()
+           
+            if (realtime === "on")
+                setTimeout(update, updateInterval);
+        }
+
+        //INITIALIZE REALTIME DATA FETCHING
+        if (realtime === "on") {
+            update();
+        }
+        //REALTIME TOGGLE
+        $("#realtime .btn").click(function () {
+            if ($(this).data("toggle") === "on") {
+                realtime = "on";
+            }
+            else {
+                realtime = "off";
+            }
+            update();
+        });
+        /*
+         * END INTERACTIVE CHART
+         */
+
+
+      
+
+    });
+
+    /*
+     * Custom Label formatter
+     * ----------------------
+     */
+    function labelFormatter(label, series) {
+        return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+                + label
+                + "<br>"
+                + Math.round(series.percent) + "%</div>";
+    }
+</script>

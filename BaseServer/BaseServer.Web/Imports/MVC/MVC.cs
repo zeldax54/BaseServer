@@ -39,6 +39,20 @@ namespace MVC
             {
                 public const string ReportPage = "~/Modules/Common/Reporting/ReportPage.cshtml";
             }
+
+        }
+
+        public static class Data
+        {
+            public static class DataDash
+            {
+                public const string DataDashIndex = "~/Modules/Data/DataDash/DataDashIndex.cshtml";
+            }
+
+            public static class TemperatureData
+            {
+                public const string TemperatureDataIndex = "~/Modules/Data/TemperatureData/TemperatureDataIndex.cshtml";
+            }
         }
 
         public static class Errors

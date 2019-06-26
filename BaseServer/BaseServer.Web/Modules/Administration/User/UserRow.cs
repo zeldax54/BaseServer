@@ -11,7 +11,8 @@ namespace BaseServer.Administration.Entities
     [DisplayName("Users"), InstanceName("User")]
     [ReadPermission(PermissionKeys.Security)]
     [ModifyPermission(PermissionKeys.Security)]
-    [LookupScript(Permission = PermissionKeys.Security)]
+    [LookupScript("Administration.Users", Permission = PermissionKeys.Security)]
+  
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
         [DisplayName("User Id"), Identity]
