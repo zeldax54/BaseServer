@@ -10,7 +10,7 @@ namespace BaseServer.FrontPage.Pages
     [RoutePrefix("Front"), Route("{action=index}")]
     public class FrontPageController : Controller
     {
-        [HttpGet]
+        [HttpGet,Route("~/")]
         public ActionResult Index()
         {
             return View(MVC.Views.FrontPage.FrontPage_, new DashboardPageModel());
