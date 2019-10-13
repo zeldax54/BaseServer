@@ -61,6 +61,11 @@ namespace MVC
             public const string ValidationError = "~/Views/Errors/ValidationError.cshtml";
         }
 
+        public static class FrontPage
+        {
+            public const string FrontPage_ = "~/Modules/FrontPage/FrontPage.cshtml";
+        }
+
         public static class Membership
         {
             public static class Account

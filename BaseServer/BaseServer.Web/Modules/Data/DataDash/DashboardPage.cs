@@ -9,7 +9,7 @@ namespace BaseServer.Data.Pages
     [RoutePrefix("DataDash"), Route("{action=index}")]
     public class DataDashController : Controller
     {
-        [Authorize, HttpGet, Route("~/DataDash")]
+        [HttpGet, Route("~/DataDash")]
         public ActionResult Index()
         {
             return View(MVC.Views.Data.DataDash.DataDashIndex, null);

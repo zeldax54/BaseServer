@@ -9,7 +9,7 @@ namespace BaseServer.Common.Pages
     [RoutePrefix("Dashboard"), Route("{action=index}")]
     public class DashboardController : Controller
     {
-        [Authorize, HttpGet, Route("~/")]
+        [HttpGet, Route("~/")]
         public ActionResult Index()
         {
             return View(MVC.Views.Common.Dashboard.DashboardIndex, new DashboardPageModel());

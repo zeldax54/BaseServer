@@ -826,6 +826,7 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="wkhtmltopdf-license.txt" />
     <Content Include="Modules\Data\DataDash\DataDashIndex.cshtml" />
+    <Content Include="Modules\FrontPage\FrontPage.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1676,6 +1677,8 @@
     <Compile Include="Modules\Data\DataDash\DashboardPage.cs" />
     <Compile Include="Modules\Data\DataDash\DataDashEndpoint.cs" />
     <Compile Include="Modules\Data\DataDash\DataDashRepository.cs" />
+    <Compile Include="Modules\FrontPage\FrontPageNavigation.cs" />
+    <Compile Include="Modules\FrontPage\FrontPagePage.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
