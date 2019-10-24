@@ -6,7 +6,7 @@ namespace BaseServer.Common.Pages
     using System;
     using System.Web.Mvc;
 
-    [RoutePrefix("Dashboard"), Route("{action=index}")]
+    [RoutePrefix("~/Dashboard"), Route("{action=index}")]
     public class DashboardController : Controller
     {
         [HttpGet, Route("~/Dashboard")]

@@ -10,7 +10,7 @@ namespace BaseServer.Data.Endpoints
     using MyRow = Entities.TemperatureDataRow;
 
     [RoutePrefix("Services/Data/DataDash"), Route("{action}")]
-    [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]
+    [ConnectionKey(typeof(MyRow))]
     public class DataDashController : ServiceEndpoint
     {
         

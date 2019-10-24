@@ -25,7 +25,7 @@ namespace BaseServer.Data.Repositories
                 {
                     Id = i,
                     Datetime = DateTime.Now,
-                    Value = random.Next(0,45)
+                    Value = random.Next(0,1)
                 });
 
             }

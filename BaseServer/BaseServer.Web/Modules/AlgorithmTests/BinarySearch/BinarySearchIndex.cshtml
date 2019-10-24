@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Binary Search";
+    ViewData["PageId"] = "Binary Search";
+    Layout = MVC.Views.Shared._Layout;
+}
+
+
+@section Head {
+
+    <script src="~/Scripts/paperjs/dist/paper-full.min.js"></script>
+    <script type="text/paperscript"  src="~/Scripts/myScripts/binarysearch.js" canvas="myCanvas"></script>
+    <link href="~/Scripts/myCss/binarysearch.css" rel="stylesheet" type="text/css">
+
+}
+
+@*@section ContentHeader {
+        <h1><small>Professional software developer since 2011</small></h1>
+    }*@
+
+<row>
+    <div>
+        <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            Binary Search
+            <small>one element in a one million list.</small>
+        </h2>
+    </div>
+    <div>
+        <canvas id="myCanvas" resize></canvas>
+    </div>
+</row>

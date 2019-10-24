@@ -28,6 +28,15 @@ namespace MVC
 
         }
 
+        public static class AlgorithmTests
+        {
+            public static class BinarySearch
+            {
+                public const string BinarySearchIndex = "~/Modules/AlgorithmTests/BinarySearch/BinarySearchIndex.cshtml";
+            }
+
+        }
+
         public static class Common
         {
             public static class Dashboard
