@@ -21,9 +21,36 @@
 <row>
     <div>
         <h2 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
-            Binary Search
-            <small>one element in a one million list.</small>
+            <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" target="_blank" id="information">Binary Search of</a>
+            <small id="msj">one element in a one million list.</small>
+            <small id="delay">Two second delay between iterations for animation purposses.</small>
+            <small id="msj">Each square represent a number, starting in one(1). Legend:</small>
+            <small>
+                <span style="color:#00c0ef">■ Current analized array section</span>
+                <span style="color:#dd4b39">■ Analized positions</span>
+                <span style="color:#78208e">■ Discarded array section</span>
+                <span style="color:#00a65a">■ Found position number</span>
+
+
+            </small>
+
+            <small id="iterationscontainer">Found in <span style="color:green" id="iterations"></span> iterations</small>
+            <small style="color:green;display:none" id="notfound">Not found!!!</small>
+            <small id="pointing"></small>
         </h2>
+        <div class="box-footer col-md-4">
+        <div class="input-group">
+    <input type="number" name="message" id="tosearch" placeholder="Type number to search ..." class="form-control">
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-success btn-flat" id="mybutton">Search</button>
+    </span>
+    </div></div>
+    
+    
+    </div>
+    <div>
+    @*    <button id="mybutton" class="btn btn-lg" style="background-color:red">click</button>*@
+
     </div>
     <div>
         <canvas id="myCanvas" resize></canvas>
