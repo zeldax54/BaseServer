@@ -5,12 +5,14 @@
     Layout = MVC.Views.Shared._Layout;
 }
 
+@model BaseServer.FrontPage.Model.FrontPageModel
 
 @section Head {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dustjs-linkedin/2.7.5/dust-full.min.js" async defer></script>
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-  
+    <link href="~/Scripts/myCss/front.css" rel="stylesheet" type="text/css">
+
 
 
 }
@@ -31,5 +33,27 @@
             <div><p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><span><strong>Email:</strong> </span> <span>zeldax54@gmail.com</span></p></div>
 
         </div>
-    </row><br>
+        
+
+    </row>
+
+    <div class="col-md-3 col-sm-6 col-xs-12" style="float:right">
+        <div class="info-box">
+            <span class="info-box-icon bg-aqua" style="font-size:12px">
+                @Model.IpResponse.city               
+            </span>
+            
+            <div class="info-box-content">
+                <span class="info-box-more"><img style="margin-left:-12%" src="@Model.WheatherResponse.weather[0].icon"> <small>@Model.WheatherResponse.weather[0].description</small></span>
+                <span class="info-box-more"><span class="fa fa-thermometer-empty"></span> @Model.WheatherResponse.main.temp<small>°C H:@Model.WheatherResponse.main.humidity %</small> </span>
+</div><!-- /.info-box-content -->
+        </div><!-- /.info-box -->
+    </div>
+<br>
+
+
+
+
+
+
 
