@@ -87,8 +87,8 @@
       <HintPath>..\..\packages\Serenity.Web.3.9.6\lib\net45\Mono.Cecil.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NUglify, Version=1.5.12.0, Culture=neutral, PublicKeyToken=15bc7810aec21b5e, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NUglify.1.5.12\lib\net40\NUglify.dll</HintPath>
@@ -1216,6 +1216,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Visitors.VisitorsColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Data\DataDash\DataDashScript.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
@@ -1782,6 +1785,19 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Content\site\site.data.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Visitors.VisitorsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Visitors.VisitorsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\Visitors\Visitors\VisitorsIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Visitors\Visitors\VisitorsDialog.ts" />
+    <TypeScriptCompile Include="Modules\Visitors\Visitors\VisitorsGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\Visitors.VisitorsForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Content\site\site.visitors.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1799,6 +1815,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\DefaultDB\DefaultDB_20191115_000700_VisitorsDataAlter.cs" />
+    <Compile Include="Migrations\DefaultDB\DefaultDB_20191114_213000_VisitorsData.cs" />
     <Compile Include="Modules\Administration\AdministrationNavigation.cs" />
     <Compile Include="Modules\Administration\Language\LanguageLookup.cs" />
     <Compile Include="Modules\Administration\RolePermission\RolePermissionUpdateRequest.cs" />
@@ -1930,6 +1948,13 @@
     <Compile Include="Modules\Data\TemperatureData\TemperatureDataColumns.cs" />
     <Compile Include="Modules\Data\TemperatureData\TemperatureDataForm.cs" />
     <Compile Include="Modules\Data\DataNavigation.cs" />
+    <Compile Include="Modules\Visitors\Visitors\VisitorsRow.cs" />
+    <Compile Include="Modules\Visitors\Visitors\VisitorsRepository.cs" />
+    <Compile Include="Modules\Visitors\Visitors\VisitorsEndpoint.cs" />
+    <Compile Include="Modules\Visitors\Visitors\VisitorsPage.cs" />
+    <Compile Include="Modules\Visitors\Visitors\VisitorsColumns.cs" />
+    <Compile Include="Modules\Visitors\Visitors\VisitorsForm.cs" />
+    <Compile Include="Modules\Visitors\VisitorsNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

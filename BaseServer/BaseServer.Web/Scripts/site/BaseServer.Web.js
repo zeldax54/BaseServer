@@ -547,8 +547,66 @@ var BaseServer;
 (function (BaseServer) {
     var Texts;
     (function (Texts) {
-        BaseServer['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Data: { TemperatureData: { Datetime: 1, Id: 1, UserDisplayName: 1, UserEmail: 1, UserId: 1, UserInsertDate: 1, UserInsertUserId: 1, UserIsActive: 1, UserLastDirectoryUpdate: 1, UserPasswordHash: 1, UserPasswordSalt: 1, UserSource: 1, UserUpdateDate: 1, UserUpdateUserId: 1, UserUserImage: 1, UserUsername: 1, Value: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        BaseServer['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Data: { TemperatureData: { Datetime: 1, Id: 1, UserDisplayName: 1, UserEmail: 1, UserId: 1, UserInsertDate: 1, UserInsertUserId: 1, UserIsActive: 1, UserLastDirectoryUpdate: 1, UserPasswordHash: 1, UserPasswordSalt: 1, UserSource: 1, UserUpdateDate: 1, UserUpdateUserId: 1, UserUserImage: 1, UserUsername: 1, Value: 1 } }, Visitors: { Visitors: { Coords: 1, Id: 1, Ip: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = BaseServer.Texts || (BaseServer.Texts = {}));
+})(BaseServer || (BaseServer = {}));
+var BaseServer;
+(function (BaseServer) {
+    var Visitors;
+    (function (Visitors) {
+        var VisitorsForm = /** @class */ (function (_super) {
+            __extends(VisitorsForm, _super);
+            function VisitorsForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!VisitorsForm.init) {
+                    VisitorsForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(VisitorsForm, [
+                        'Ip', w0,
+                        'Coords', w0
+                    ]);
+                }
+                return _this;
+            }
+            VisitorsForm.formKey = 'Visitors.Visitors';
+            return VisitorsForm;
+        }(Serenity.PrefixedContext));
+        Visitors.VisitorsForm = VisitorsForm;
+    })(Visitors = BaseServer.Visitors || (BaseServer.Visitors = {}));
+})(BaseServer || (BaseServer = {}));
+var BaseServer;
+(function (BaseServer) {
+    var Visitors;
+    (function (Visitors) {
+        var VisitorsRow;
+        (function (VisitorsRow) {
+            VisitorsRow.idProperty = 'Id';
+            VisitorsRow.nameProperty = 'Ip';
+            VisitorsRow.localTextPrefix = 'Visitors.Visitors';
+        })(VisitorsRow = Visitors.VisitorsRow || (Visitors.VisitorsRow = {}));
+    })(Visitors = BaseServer.Visitors || (BaseServer.Visitors = {}));
+})(BaseServer || (BaseServer = {}));
+var BaseServer;
+(function (BaseServer) {
+    var Visitors;
+    (function (Visitors) {
+        var VisitorsService;
+        (function (VisitorsService) {
+            VisitorsService.baseUrl = 'Visitors/Visitors';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                VisitorsService[x] = function (r, s, o) {
+                    return Q.serviceRequest(VisitorsService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(VisitorsService = Visitors.VisitorsService || (Visitors.VisitorsService = {}));
+    })(Visitors = BaseServer.Visitors || (BaseServer.Visitors = {}));
 })(BaseServer || (BaseServer = {}));
 var BaseServer;
 (function (BaseServer) {
@@ -2918,5 +2976,51 @@ var BaseServer;
         }(Serenity.PropertyPanel));
         Membership.SignUpPanel = SignUpPanel;
     })(Membership = BaseServer.Membership || (BaseServer.Membership = {}));
+})(BaseServer || (BaseServer = {}));
+var BaseServer;
+(function (BaseServer) {
+    var Visitors;
+    (function (Visitors) {
+        var VisitorsDialog = /** @class */ (function (_super) {
+            __extends(VisitorsDialog, _super);
+            function VisitorsDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new Visitors.VisitorsForm(_this.idPrefix);
+                return _this;
+            }
+            VisitorsDialog.prototype.getFormKey = function () { return Visitors.VisitorsForm.formKey; };
+            VisitorsDialog.prototype.getIdProperty = function () { return Visitors.VisitorsRow.idProperty; };
+            VisitorsDialog.prototype.getLocalTextPrefix = function () { return Visitors.VisitorsRow.localTextPrefix; };
+            VisitorsDialog.prototype.getNameProperty = function () { return Visitors.VisitorsRow.nameProperty; };
+            VisitorsDialog.prototype.getService = function () { return Visitors.VisitorsService.baseUrl; };
+            VisitorsDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], VisitorsDialog);
+            return VisitorsDialog;
+        }(Serenity.EntityDialog));
+        Visitors.VisitorsDialog = VisitorsDialog;
+    })(Visitors = BaseServer.Visitors || (BaseServer.Visitors = {}));
+})(BaseServer || (BaseServer = {}));
+var BaseServer;
+(function (BaseServer) {
+    var Visitors;
+    (function (Visitors) {
+        var VisitorsGrid = /** @class */ (function (_super) {
+            __extends(VisitorsGrid, _super);
+            function VisitorsGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            VisitorsGrid.prototype.getColumnsKey = function () { return 'Visitors.Visitors'; };
+            VisitorsGrid.prototype.getDialogType = function () { return Visitors.VisitorsDialog; };
+            VisitorsGrid.prototype.getIdProperty = function () { return Visitors.VisitorsRow.idProperty; };
+            VisitorsGrid.prototype.getLocalTextPrefix = function () { return Visitors.VisitorsRow.localTextPrefix; };
+            VisitorsGrid.prototype.getService = function () { return Visitors.VisitorsService.baseUrl; };
+            VisitorsGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], VisitorsGrid);
+            return VisitorsGrid;
+        }(Serenity.EntityGrid));
+        Visitors.VisitorsGrid = VisitorsGrid;
+    })(Visitors = BaseServer.Visitors || (BaseServer.Visitors = {}));
 })(BaseServer || (BaseServer = {}));
 //# sourceMappingURL=BaseServer.Web.js.map

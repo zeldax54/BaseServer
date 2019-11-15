@@ -7416,3 +7416,9 @@ section.content > .s-DataGrid {
 .s-Data-TemperatureDataDialog .caption {
   width: 150px;
 }
+.s-Visitors-VisitorsDialog > .size {
+  width: 650px;
+}
+.s-Visitors-VisitorsDialog .caption {
+  width: 150px;
+}

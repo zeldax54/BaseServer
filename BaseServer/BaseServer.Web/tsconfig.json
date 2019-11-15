@@ -16,6 +16,6 @@
   "include": [
     "./Imports/",
     "./Modules/",
-    "./Scripts/typings/", "../../Hepers/IpResponde.cs"
+    "./Scripts/typings/", "../../Hepers/IpResponde.cs", "Migrations/DefaultDB/DefaultDB_20191114_213000_VisitorsData.cs"
   ]
 }

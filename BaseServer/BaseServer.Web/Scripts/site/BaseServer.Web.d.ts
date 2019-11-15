@@ -619,6 +619,53 @@ declare namespace BaseServer {
 }
 declare namespace BaseServer.Texts {
 }
+declare namespace BaseServer.Visitors {
+}
+declare namespace BaseServer.Visitors {
+    interface VisitorsForm {
+        Ip: Serenity.StringEditor;
+        Coords: Serenity.StringEditor;
+    }
+    class VisitorsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace BaseServer.Visitors {
+    interface VisitorsRow {
+        Id?: number;
+        Ip?: string;
+        Coords?: string;
+    }
+    namespace VisitorsRow {
+        const idProperty = "Id";
+        const nameProperty = "Ip";
+        const localTextPrefix = "Visitors.Visitors";
+        const enum Fields {
+            Id = "Id",
+            Ip = "Ip",
+            Coords = "Coords"
+        }
+    }
+}
+declare namespace BaseServer.Visitors {
+    namespace VisitorsService {
+        const baseUrl = "Visitors/Visitors";
+        function Create(request: Serenity.SaveRequest<VisitorsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<VisitorsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<VisitorsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<VisitorsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Visitors/Visitors/Create",
+            Update = "Visitors/Visitors/Update",
+            Delete = "Visitors/Visitors/Delete",
+            Retrieve = "Visitors/Visitors/Retrieve",
+            List = "Visitors/Visitors/List"
+        }
+    }
+}
 declare namespace BaseServer.Administration {
     class LanguageDialog extends Serenity.EntityDialog<LanguageRow, any> {
         protected getFormKey(): string;
@@ -1090,6 +1137,26 @@ declare namespace BaseServer.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace BaseServer.Visitors {
+    class VisitorsDialog extends Serenity.EntityDialog<VisitorsRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: VisitorsForm;
+    }
+}
+declare namespace BaseServer.Visitors {
+    class VisitorsGrid extends Serenity.EntityGrid<VisitorsRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof VisitorsDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }

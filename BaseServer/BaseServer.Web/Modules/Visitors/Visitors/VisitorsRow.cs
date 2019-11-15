@@ -1,0 +1,63 @@
+﻿
+namespace BaseServer.Visitors.Entities
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using Serenity.Data.Mapping;
+    using System;
+    using System.ComponentModel;
+    using System.IO;
+
+    [ConnectionKey("Default"), Module("Visitors"), TableName("[dbo].[Visitors]")]
+    [DisplayName("Visitors"), InstanceName("Visitors")]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
+    public sealed class VisitorsRow : Row, IIdRow, INameRow
+    {
+        [DisplayName("Id"), Identity]
+        public Int32? Id
+        {
+            get { return Fields.Id[this]; }
+            set { Fields.Id[this] = value; }
+        }
+
+        [DisplayName("Ip"), Size(100), NotNull, QuickSearch]
+        public String Ip
+        {
+            get { return Fields.Ip[this]; }
+            set { Fields.Ip[this] = value; }
+        }
+
+        [DisplayName("Coords"), Size(100), NotNull]
+        public String Coords
+        {
+            get { return Fields.Coords[this]; }
+            set { Fields.Coords[this] = value; }
+        }
+
+        IIdField IIdRow.IdField
+        {
+            get { return Fields.Id; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.Ip; }
+        }
+
+        public static readonly RowFields Fields = new RowFields().Init();
+
+        public VisitorsRow()
+            : base(Fields)
+        {
+        }
+
+        public class RowFields : RowFieldsBase
+        {
+            public Int32Field Id;
+            public StringField Ip;
+            public StringField Coords;
+        }
+    }
+}
