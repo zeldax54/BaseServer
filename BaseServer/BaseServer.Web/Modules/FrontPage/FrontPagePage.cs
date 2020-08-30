@@ -28,7 +28,8 @@ namespace BaseServer.FrontPage.Pages
             //SaveData           
             //Mudar a thread
             var connection=SqlConnections.NewByKey("Default");
-            connection.Query($"Insert into Visitors (Ip,Coords,City,Country) values('{ip}','{ipResponse.lat + ":" + ipResponse.lon}','{ipResponse.city}','{ipResponse.country}')");
+           
+            connection.Query($"Insert into Visitors (Ip,Coords,City,Country,DateTime) values('{ip}','{ipResponse.lat + ":" + ipResponse.lon}','{ipResponse.city}','{ipResponse.country}','{DateTime.Now.ToString("yyyyMMdd hh:mm:ss")}')");
             //Wheather
             var url = $"http://api.openweathermap.org/data/2.5/weather?q={ipResponse.city},{ipResponse.countryCode}&APPID=2e1487498cb7f439f5dad79bbc59033a&mode=json&units=metric";
             //var urllat = "http://api.openweathermap.org/data/2.5/weather?lat={ipResponse.lat}&lon={ipResponse.lon}&APPID=2e1487498cb7f439f5dad79bbc59033a&mode=json&units=metric";

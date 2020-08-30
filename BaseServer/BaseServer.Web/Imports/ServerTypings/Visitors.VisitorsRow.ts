@@ -3,6 +3,9 @@
         Id?: number;
         Ip?: string;
         Coords?: string;
+        City?: string;
+        Country?: string;
+        DateTime?: string;
     }
 
     export namespace VisitorsRow {
@@ -13,7 +16,10 @@
         export declare const enum Fields {
             Id = "Id",
             Ip = "Ip",
-            Coords = "Coords"
+            Coords = "Coords",
+            City = "City",
+            Country = "Country",
+            DateTime = "DateTime"
         }
     }
 }

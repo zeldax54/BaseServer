@@ -18,5 +18,11 @@ namespace BaseServer.Visitors.Columns
         [EditLink]
         public String Ip { get; set; }
         public String Coords { get; set; }
+
+        public String City { get; set; }
+
+        public String Country { get; set; }
+
+        public String DateTime { get; set; }
     }
 }

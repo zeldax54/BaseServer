@@ -625,6 +625,9 @@ declare namespace BaseServer.Visitors {
     interface VisitorsForm {
         Ip: Serenity.StringEditor;
         Coords: Serenity.StringEditor;
+        City: Serenity.StringEditor;
+        Country: Serenity.StringEditor;
+        DateTime: Serenity.DateEditor;
     }
     class VisitorsForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -637,6 +640,9 @@ declare namespace BaseServer.Visitors {
         Id?: number;
         Ip?: string;
         Coords?: string;
+        City?: string;
+        Country?: string;
+        DateTime?: string;
     }
     namespace VisitorsRow {
         const idProperty = "Id";
@@ -645,7 +651,10 @@ declare namespace BaseServer.Visitors {
         const enum Fields {
             Id = "Id",
             Ip = "Ip",
-            Coords = "Coords"
+            Coords = "Coords",
+            City = "City",
+            Country = "Country",
+            DateTime = "DateTime"
         }
     }
 }

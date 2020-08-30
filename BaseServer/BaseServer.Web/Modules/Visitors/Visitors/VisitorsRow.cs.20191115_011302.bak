@@ -36,26 +36,6 @@ namespace BaseServer.Visitors.Entities
             set { Fields.Coords[this] = value; }
         }
 
-        [DisplayName("City"), Size(100), NotNull]
-        public String City
-        {
-            get { return Fields.City[this]; }
-            set { Fields.City[this] = value; }
-        }
-        [DisplayName("Country"), Size(100), NotNull]
-        public String Country
-        {
-            get { return Fields.Country[this]; }
-            set { Fields.Country[this] = value; }
-        }
-
-        [DisplayName("DateTime"), Size(100), NotNull]
-        public DateTime? DateTime
-        {
-            get { return Fields.DateTime[this]; }
-            set { Fields.DateTime[this] = value; }
-        }
-
         IIdField IIdRow.IdField
         {
             get { return Fields.Id; }
@@ -78,10 +58,6 @@ namespace BaseServer.Visitors.Entities
             public Int32Field Id;
             public StringField Ip;
             public StringField Coords;
-            public StringField City;
-            public StringField Country;
-            public DateTimeField DateTime;
-
         }
     }
 }
