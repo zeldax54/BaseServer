@@ -1832,6 +1832,7 @@
     <Compile Include="App_Start\SiteInitialization.ExceptionLog.cs" />
     <Compile Include="App_Start\SiteInitialization.Migrations.cs" />
     <Compile Include="App_Start\SiteInitialization.cs" />
+    <Compile Include="ChatHub.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1895,6 +1896,7 @@
     <Compile Include="Modules\Common\Navigation\NavigationModel.cs" />
     <Compile Include="Modules\Common\Reporting\DynamicDataReport.cs" />
     <Compile Include="Modules\Common\Reporting\ExcelReportGenerator.cs" />
+    <Compile Include="Startup.cs" />
     <Content Include="Modules\Common\Reporting\ReportPage.cshtml" />
     <Compile Include="Modules\Common\Reporting\ReportTree.cs" />
     <Compile Include="Modules\Common\Reporting\ReportController.cs" />

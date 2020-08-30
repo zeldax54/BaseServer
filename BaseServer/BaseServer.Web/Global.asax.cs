@@ -23,6 +23,8 @@ namespace BaseServer
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
 
+            
+
             SiteInitialization.ApplicationStart();
         }
 
