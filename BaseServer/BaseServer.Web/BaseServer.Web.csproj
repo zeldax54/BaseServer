@@ -1836,6 +1836,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\DefaultDB\DefaultDB_20200830_004500_Chats.cs" />
     <Compile Include="Migrations\DefaultDB\DefaultDB_20191115_004500_VisitorsDataAlterDate.cs" />
     <Compile Include="Migrations\DefaultDB\DefaultDB_20191115_000700_VisitorsDataAlter.cs" />
     <Compile Include="Migrations\DefaultDB\DefaultDB_20191114_213000_VisitorsData.cs" />
